@@ -10,6 +10,9 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    
+    App\Exception\Suscriber\ApiExceptionSubscriber:
+        tags: [kernel.event_listener]
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -17,8 +20,10 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Entity/'
+            - '../src/Infrastructure/Entity/'
+            - '../src/Infrastructure/Mapper/'
+            - '../src/Application/Dto'
+            - '../src/Application/Mapper'
+            - '../src/Domain/Model'
+            - '../src/Exception/Suscriber'
             - '../src/Kernel.php'
-
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
