@@ -54,19 +54,7 @@ List
 ```bash
 curl --location --request GET 'http://localhost:8000/api/v1/products' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Basic YWRtaW46YWRtaW5wYXNz' \
---data '[
-    {
-        "name": "Prueba x",
-        "sku": "123456",
-        "description": "Prueba x"
-    },
-    {
-        "name": "Prueba",
-        "sku": "1234568",
-        "description": "Prueba"
-    }
-]'
+--header 'Authorization: Basic YWRtaW46YWRtaW5wYXNz'
 
 ```
 
